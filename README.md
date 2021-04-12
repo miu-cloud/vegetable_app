@@ -56,4 +56,4 @@ https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8
 ## 使用予定Gem
 - ransack
 - devise
-- letter_opener'
+- letter_opener
