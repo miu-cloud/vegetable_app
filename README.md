@@ -53,5 +53,7 @@ https://docs.google.com/spreadsheets/d/1QR59Rpmzu6rvsAnOZz2lODwEFAHd2HkWeZPBwS44
 https://docs.google.com/spreadsheets/d/1wQHKd8Y2dzHQnqw1K1AYLOoGqTe4-fW-B4Qtnt0T1g0/edit#gid=0
 ## 画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1fAYPzRMaullK9sRpqk1mtxZaQkcsWsx5oDLfe06baEA/edit#gid=0
+## ER図
+https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8MTs/edit#gid=0
 ## 使用予定Gem
 - ransack
