@@ -11,7 +11,7 @@
 - [ ] ユーザ新規登録機能						
   - [ ] 新規登録後はマイページに遷移させる	
 
-- [ ] ログイン機能（devise）		
+- [ ] ログイン機能
 
 - [ ] マイページ機能			
 
@@ -55,3 +55,5 @@ https://docs.google.com/spreadsheets/d/1fAYPzRMaullK9sRpqk1mtxZaQkcsWsx5oDLfe06b
 https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8MTs/edit?usp=sharing
 ## 使用予定Gem
 - ransack
+- devise
+- letter_opener'
