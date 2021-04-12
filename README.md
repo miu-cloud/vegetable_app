@@ -46,14 +46,14 @@
   - [ ] 同時に投稿一覧からその投稿が消えるようにする
 					
 ## カタログ設計
-https://docs.google.com/spreadsheets/d/1QG-iEyip5AtO4r4_-pc5z5eWTpMHeHSd1R6WWLoDUmU/edit#gid=0
+https://docs.google.com/spreadsheets/d/1QG-iEyip5AtO4r4_-pc5z5eWTpMHeHSd1R6WWLoDUmU/edit?usp=sharing
 ## テーブル定義
-https://docs.google.com/spreadsheets/d/1QR59Rpmzu6rvsAnOZz2lODwEFAHd2HkWeZPBwS44rwE/edit#gid=0
+https://docs.google.com/spreadsheets/d/1QR59Rpmzu6rvsAnOZz2lODwEFAHd2HkWeZPBwS44rwE/edit?usp=sharing
 ## 画面遷移図
-https://docs.google.com/spreadsheets/d/1wQHKd8Y2dzHQnqw1K1AYLOoGqTe4-fW-B4Qtnt0T1g0/edit#gid=0
+https://docs.google.com/spreadsheets/d/1wQHKd8Y2dzHQnqw1K1AYLOoGqTe4-fW-B4Qtnt0T1g0/edit?usp=sharing
 ## 画面ワイヤーフレーム
-https://docs.google.com/spreadsheets/d/1fAYPzRMaullK9sRpqk1mtxZaQkcsWsx5oDLfe06baEA/edit#gid=0
+https://docs.google.com/spreadsheets/d/1fAYPzRMaullK9sRpqk1mtxZaQkcsWsx5oDLfe06baEA/edit?usp=sharing
 ## ER図
-https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8MTs/edit#gid=0
+https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8MTs/edit?usp=sharing
 ## 使用予定Gem
 - ransack
