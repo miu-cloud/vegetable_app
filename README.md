@@ -57,3 +57,6 @@ https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8
 - ransack
 - devise
 - letter_opener
+## その他
+### 就業Tarmからはdevise、フォロー機能を実装をする
+### カリキュラム外からはransackを用いた実装をする
