@@ -1,2 +1,7 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1>投稿したユーザの詳細など</h1>
+<%= @item.title %>
+<%= @item.content %>
+<%= @item.count %>
+<%= @item.place %>
+<h1>投稿した人</h1>
+<%= @item.user.name%>
