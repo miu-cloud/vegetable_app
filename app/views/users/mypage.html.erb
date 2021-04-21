@@ -1,3 +1,7 @@
 <h1>マイページ</h1>
   <%= image_tag @user.icon.url, class: 'user-icon '%>
   <%= link_to @user.name, user_path(@user) %>
+  <%= link_to "もらう", items_path %>
+  <%= link_to "ゆずる", new_item_path %>
+
+  
