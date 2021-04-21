@@ -65,3 +65,5 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mimemagic'
+
+gem 'ransack'
