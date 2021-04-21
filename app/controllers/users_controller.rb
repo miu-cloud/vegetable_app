@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+
   def index
     @users = User.all
+    # @user = User.find(params[:id])
+  end
+  
+  def mypage
+    @user = current_user
   end
 
   def show
@@ -16,6 +22,12 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user)
   end
+
+  # def destroy
+  #   session.delete(:user_id)
+  #   flash[:notice] = 'ログアウトしました'
+  #   redirect_to new_session_path
+  # end
 
   private
   def user_params
