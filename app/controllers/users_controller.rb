@@ -26,11 +26,7 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  # def destroy
-  #   session.delete(:user_id)
-  #   flash[:notice] = 'ログアウトしました'
-  #   redirect_to new_session_path
-  # end
+  
 
   # def search
   #   @results = @q.result
