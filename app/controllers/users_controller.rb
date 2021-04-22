@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: [:mypage, :search]
 
   def index
     @users = User.all
@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   
   def mypage
     @user = current_user
+    @users = User.all
+    @results = @q.result
   end
 
   def show
@@ -30,9 +32,9 @@ class UsersController < ApplicationController
   #   redirect_to new_session_path
   # end
 
-  def search
-    @results = @q.result
-  end
+  # def search
+  #   @results = @q.result
+  # end
 
   private
   def set_q
