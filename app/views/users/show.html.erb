@@ -1,6 +1,9 @@
 <h1>ユーザの詳細</h1>
-<%= image_tag @user.icon.url %>
-<%#= image_tag 'default.jpg', @user.icon.url, :alt => 'デフォルトの画像' %>
+<% if @user.icon? %>
+  <%= image_tag @user.icon.url, class: 'user-icon '%>
+<% else %>
+  <%= image_tag 'default.jpg', :class=>"cat-icon", :alt => 'デフォルト画像', :size =>'60x50' %>
+<% end %>
 <%= @user.name %>
 <% if @user.id == current_user.id %>
   <%= @user.email %>

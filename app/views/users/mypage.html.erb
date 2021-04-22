@@ -1,5 +1,9 @@
 <h1>マイページ</h1>
+<% if @user.icon? %>
   <%= image_tag @user.icon.url, class: 'user-icon '%>
+<% else %>
+  <%= image_tag 'default.jpg', :class=>"cat-icon", :alt => 'デフォルト画像', :size =>'60x50' %>
+<% end %>
   <%= link_to @user.name, user_path(@user) %>
   <%= link_to "もらう", items_path %>
   <%= link_to "ゆずる", new_item_path %>
