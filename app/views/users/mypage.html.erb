@@ -4,4 +4,10 @@
   <%= link_to "もらう", items_path %>
   <%= link_to "ゆずる", new_item_path %>
 
-  
+<h1>ユーザー検索</h1>
+<%= search_form_for @q, url: mypage_path do |f| %>
+  <%= f.label :name_cont, 'ユーザー名' %>
+  <%= f.search_field :name_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>

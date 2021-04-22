@@ -67,3 +67,5 @@ gem 'carrierwave'
 gem 'mimemagic'
 
 gem 'ransack'
+
+gem 'pry-rails'

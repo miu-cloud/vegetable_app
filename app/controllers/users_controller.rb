@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_q, only: [:index, :search]
 
   def index
     @users = User.all
@@ -29,8 +30,19 @@ class UsersController < ApplicationController
   #   redirect_to new_session_path
   # end
 
+  def search
+    @results = @q.result
+  end
+
   private
+  def set_q
+    @q = User.ransack(params[:q])
+  end
+
   def user_params
     params.require(:user).permit(:name, :email, :icon)
   end
+
+
+
 end
