@@ -24,7 +24,7 @@
   </tr>
   <tr>
     <th><%= f.label :受付状態 %></th>
-    <th><%= f.text_field :state %></th>
+    <th><%= f.select :state, ["可","終了"], {include_blank: '選択して下さい'} %></th>
   </tr>
   <tr>
     <th><%= f.label :画像 %></th>
