@@ -44,10 +44,14 @@
       <th><%= image_tag item.image.url, class: 'item-icon '%></th>
     </tr>
     <tr>
+    <% if current_user.id == item.user_id %>
       <th><%= link_to "編集", edit_item_path(item) %></th>
+      <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+    <% end %>
     </tr>
   </table> 
 <% end %>
+
 
 
 
