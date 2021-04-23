@@ -1,4 +1,13 @@
 <h1>投稿一覧画面</h1>
+<h1>やさい検索</h1>
+<%= search_form_for @q, url: items_path do |f| %>
+  <%= f.label :title_cont, 'やさい検索' %>
+  <%= f.search_field :title_cont %>
+  <br>
+  <%= f.submit '検索' %>
+  <%= link_to "リセット", items_path %>
+<% end %>
+
 <% @items.each do |item| %>
   <table> 
     <tr>
@@ -6,7 +15,7 @@
       <th><%= item.user.name %></th>
     </tr>
     <tr>
-      <th>タイトル</th>
+      <th>野菜の名前</th>
       <th><%= item.title %></th>
     </tr>
     <tr>
@@ -35,5 +44,6 @@
     </tr>
   </table> 
 <% end %>
+
 
 

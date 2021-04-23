@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+
   def index
-    @items = Item.all
+    @q = Item.ransack(params[:q])
+    @items = @q.result
   end
 
   def show
@@ -22,6 +24,7 @@ class ItemsController < ApplicationController
   end
  
   private
+
   def item_params
     params.require(:item).permit(:title, :content, :count ,:place, :promise_at, :state, :image)
   end
