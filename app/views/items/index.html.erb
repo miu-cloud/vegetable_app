@@ -13,7 +13,8 @@
   <table> 
     <tr>
       <th>ユーザ名</th>
-      <th><%= item.user.name %></th>
+      <th><%= link_to item.user.name, user_path(item.user) %></th>
+      
     </tr>
     <tr>
       <th>野菜の名前</th>

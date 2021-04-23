@@ -10,13 +10,8 @@
   <%= link_to "編集", edit_user_path(@user) %>
 <% end %>
 <h1>投稿リスト</h1>
-<%# @item.each do |item| %>
 <% @user.items.each do |item| %>
   <table> 
-    <tr>
-      <th>ユーザ名</th>
-      <th><%= item.user.name %></th>
-    </tr>
     <tr>
       <th>野菜の名前</th>
       <th><%= item.title %></th>
