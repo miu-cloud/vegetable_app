@@ -26,12 +26,6 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
-
-
-  # def search
-  #   @results = @q.result
-  # end
-
   private
   def set_q
     @q = User.ransack(params[:q])
