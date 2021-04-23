@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @q = Item.ransack(params[:q])
+    @q = Item.ransack(params[:q])#.order(created_at: :desc)
     @items = @q.result
   end
 

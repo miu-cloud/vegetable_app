@@ -9,6 +9,42 @@
   <%= @user.email %>
   <%= link_to "編集", edit_user_path(@user) %>
 <% end %>
+<h1>投稿リスト</h1>
+<%# @item.each do |item| %>
+<% @user.items.each do |item| %>
+  <table> 
+    <tr>
+      <th>ユーザ名</th>
+      <th><%= item.user.name %></th>
+    </tr>
+    <tr>
+      <th>野菜の名前</th>
+      <th><%= item.title %></th>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <th><%= item.content %></th>
+    </tr>
+    <tr>  
+      <th>数量</th>
+      <th><%= item.count %></th>
+    </tr>
+    <tr>
+      <th>譲渡場所</th>
+      <th><%= item.place %></th>
+    </tr>
+    <tr>
+      <th>日時</th>
+      <th><%= item.promise_at %></th>
+    </tr>
+    <tr>
+      <th>受付状態</th>
+      <th><%= item.state %></th>
+    </tr>
+    <tr>
+      <th>画像</th>
+      <th><%= image_tag item.image.url, class: 'item-icon '%></th>
+    </tr>
+<% end %>
+
   <%= link_to "戻る", mypage_path %>
-
-
