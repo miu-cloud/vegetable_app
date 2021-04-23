@@ -1,3 +1,5 @@
+<h1>投稿した人</h1>
+<%= @item.user.name%>
 <h1>投稿したユーザの詳細など</h1>
 <%= @item.title %>
 <%= @item.content %>
@@ -6,5 +8,3 @@
 <%= @item.promise_at %>
 <%= @item.state %>
 <%= image_tag @item.image.url, class: 'item-icon '%>
-<h1>投稿した人</h1>
-<%= @item.user.name%>

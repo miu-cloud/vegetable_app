@@ -1,10 +1,39 @@
 <h1>投稿一覧画面</h1>
 <% @items.each do |item| %>
-<%= item.user.name %>
-<%= item.title %>
-<%= item.count %>
-<%= item.place %>
-<%= item.promise_at %>
-<%= item.state %>
-<%= item.image %>
+  <table> 
+    <tr>
+      <th>ユーザ名</th>
+      <th><%= item.user.name %></th>
+    </tr>
+    <tr>
+      <th>タイトル</th>
+      <th><%= item.title %></th>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <th><%= item.content %></th>
+    </tr>
+    <tr>  
+      <th>数量</th>
+      <th><%= item.count %></th>
+    </tr>
+    <tr>
+      <th>譲渡場所</th>
+      <th><%= item.place %></th>
+    </tr>
+    <tr>
+      <th>日時</th>
+      <th><%= item.promise_at %></th>
+    </tr>
+    <tr>
+      <th>受付状態</th>
+      <th><%= item.state %></th>
+    </tr>
+    <tr>
+      <th>画像</th>
+      <th><%= image_tag item.image.url, class: 'item-icon '%></th>
+    </tr>
+  </table> 
 <% end %>
+
+
