@@ -29,6 +29,12 @@ class ItemsController < ApplicationController
     @item.update(item_params)
     redirect_to items_path(@item)
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, notice:"ブログを削除しました！"
+  end
  
   private
 
