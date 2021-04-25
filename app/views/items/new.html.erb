@@ -2,21 +2,21 @@
 
 <%= form_for @item do |f| %>
 <table> 
-  <tr>※カタカナで入力してください
+  <tr>
     <th><%= f.label :野菜の名前 %></th>
-    <th><%= f.text_field :title %></th>
+    <th><%= f.text_field :title,:placeholder => "カタカナ（全角）で入力して下さい" %></th>
   </tr>
   <tr>
     <th><%= f.label :内容 %></th>
-    <th><%= f.text_area :content %></th>
+    <th><%= f.text_area :content,:placeholder => "例）規格外品です。○月○日に収穫しました。　など"  %></th>
   </tr>
   <tr>
     <th><%= f.label :数量 %></th>
-    <th><%= f.number_field :count, min:0, max:100 %></th>
+    <th><%= f.number_field :count, min:1, max:100, :placeholder => "1~100" %></th>
   </tr>
 　<tr>
     <th><%= f.label :譲渡場所 %></th>
-    <th><%= f.text_field :place %></th>
+    <th><%= f.text_field :place, :placeholder => "住所は入力しないで下さい" %></th>
 　</tr>
   <tr>
     <th><%= f.label :日時 %></th>
@@ -31,7 +31,8 @@
     <th><%= f.file_field :image %></th>
   </tr>
 </table> 
-
-<%= f.submit "投稿" %>
+<div class = "button" >
+  <%= f.submit "投稿" %>
+</div>
 
 <% end %>

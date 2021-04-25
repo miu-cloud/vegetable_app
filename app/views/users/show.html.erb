@@ -1,16 +1,20 @@
 <h1>ユーザの詳細</h1>
-<% if @user.icon? %>
-  <%= image_tag @user.icon.url, class: 'user-icon '%>
-<% else %>
-  <%= image_tag 'default.jpg', :class=>"cat-icon", :alt => 'デフォルト画像', :size =>'60x50' %>
-<% end %>
-<%= @user.name %>
-<% if @user.id == current_user.id %>
-  <%= @user.email %>
-  <%= link_to "編集", edit_user_path(@user) %>
-<% end %>
+<div class = "profile">
+  <% if @user.icon? %>
+    <%= image_tag @user.icon.url, class: 'user-icon ', :size => '120x110' %>
+  <% else %>
+    <%= image_tag 'default.jpg', :class=>"cat-icon", :alt => 'デフォルト画像', :size =>'120x110' %>
+  <% end %>
+    <%= @user.name %>
+  <% if @user.id == current_user.id %>
+  <br>
+    <%= @user.email %>
+    <%= link_to "編集", edit_user_path(@user) %>
+  <% end %>
+</div>
 <h1>投稿リスト</h1>
 <% @user.items.each do |item| %>
+  <div class = "box"><span class="box-tape"><%= item.title %></span>
   <table> 
     <tr>
       <th>野菜の名前</th>
@@ -40,6 +44,12 @@
       <th>画像</th>
       <th><%= image_tag item.image.url, class: 'item-icon '%></th>
     </tr>
+    <% if current_user.id == item.user_id %>
+      <th><%= link_to "編集", edit_item_path(item) %></th>
+      <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+    <% end %>
+    </table> 
+    </div>
 <% end %>
 
   <%= link_to "戻る", mypage_path %>

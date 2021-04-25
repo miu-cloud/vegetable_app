@@ -1,16 +1,17 @@
 <h1>投稿一覧画面</h1>
 <h1>やさい検索</h1>
-    ※カタカナで入力してください
-<%= search_form_for @q, url: items_path do |f| %>
-  <%= f.label :title_cont, 'やさい検索' %>
-  <%= f.search_field :title_cont %>
-  <%= f.submit '検索' %>
-  <%= link_to "リセット", items_path %>
-
-<% end %>
+<div class = "search-form" >
+  <%= search_form_for @q, url: items_path do |f| %>
+    <%= f.label :title_cont, 'やさい検索' %>
+    <%= f.search_field :title_cont, :placeholder => "カタカナ(全角)で検索して下さい" %>
+    <%= f.submit '検索' %>
+    <%= link_to "リセット", items_path %>
+  <% end %>
+</div>
 
 <% @items.each do |item| %>
-  <table class = "box"> 
+  <div class = "box"><span class="box-tape"><%= item.title %></span>
+  <table>
     <tr>
       <th>ユーザ名</th>
       <th><%= link_to item.user.name, user_path(item.user) %></th>
@@ -54,6 +55,7 @@
     <% end %>
     </tr>
   </table> 
+  </div> 
 <% end %>
 
 

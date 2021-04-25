@@ -1,14 +1,21 @@
 <h1>ユーザの編集</h1>
-<%= form_for @user do |f|%>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= form_for @user do |f|%>
+    <table> 
+      <tr>
+        <th><%= f.label :name %></th>
+        <th><%= f.text_field :name %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :email %></th>
+        <th><%= f.text_field :email %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :icon %></th>
+        <th><%= f.file_field :icon %></th>
+      </tr>
+    </table>
+    <div class = "button" >
+      <%= f.submit "編集" %>
+    </div>
+  <% end %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :icon %>
-  <%= f.file_field :icon %>
-
-  <%= f.submit "編集" %>
-
-<% end %>
