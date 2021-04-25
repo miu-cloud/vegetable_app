@@ -10,7 +10,7 @@
 <% end %>
 
 <% @items.each do |item| %>
-  <table> 
+  <table class = "box"> 
     <tr>
       <th>ユーザ名</th>
       <th><%= link_to item.user.name, user_path(item.user) %></th>
@@ -49,7 +49,7 @@
       <th><%= link_to "編集", edit_item_path(item) %></th>
       <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
     <% else %>
-      <th><%= link_to "ほしい" %></th>
+      <th><%= link_to "ほしい", conversation_messages_path(item.user_id) %></th>
     <% end %>
     </tr>
   </table> 
