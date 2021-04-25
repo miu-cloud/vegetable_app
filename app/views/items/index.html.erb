@@ -49,7 +49,8 @@
       <th><%= link_to "編集", edit_item_path(item) %></th>
       <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
     <% else %>
-      <th><%= link_to "ほしい", conversation_messages_path(item.user_id) %></th>
+      <!--書いてもらった<th><%= link_to "ほしい", conversation_messages_path(conversation_id: Conversation.where(recipient_id: item.user_id).ids[0].to_i)%></th>-->
+　　　　<td><%= link_to "ほしい", conversation_messages_path(item.user_id) %></td>
     <% end %>
     </tr>
   </table> 

@@ -11,6 +11,21 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to root_path, class: "navbar-item" do %>
+        <h1 class="title is-4" style="font-family: fantasy;">Vegetabel</h1>
+      <% end %>
+
+      <% if user_signed_in? %> 
+        <%= link_to "マイページ", mypage_path %>
+        <%= link_to "メッセージ", conversations_path %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "新規登録", new_user_registration_path %>
+      <% end %>
+    </header>
+
     <% if flash[:notice]%>
       <div class="notice">
         <p class="notice"><%= notice %></p>
@@ -22,19 +37,11 @@
        <p class="alert"><%= alert %></p>
      </div>
    <% end %>
-
-  <%= link_to root_path, class: "navbar-item" do %>
-    <h1 class="title is-4" style="font-family: cursive;">Vegetabel</h1>
-  <% end %>
-
-  <% if user_signed_in? %> 
-     <%= link_to "マイページ", mypage_path %>
-     <%= link_to "メッセージ", conversations_path %>
-     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% else %>
-     <%= link_to "ログイン", new_user_session_path %>
-     <%= link_to "新規登録", new_user_registration_path %>
-  <% end %>
+  <div class = "main">
     <%= yield %>
+  </div>
   </body>
+  <footer>
+  
+  </footer>
 </html>

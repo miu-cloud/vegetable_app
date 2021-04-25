@@ -4,6 +4,8 @@ class MessagesController < ApplicationController
   end
 
   def index
+    # @conversation = Conversation.where(sender_id: params[:user_id])#書いてもらった
+    @conversation = Conversation.find(params[:conversation_id])
     @messages = @conversation.messages
     if @messages.length > 10
       @over_ten = true
@@ -21,6 +23,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @conversation = Conversation.find(params[:conversation_id])
     @message = @conversation.messages.build(message_params)
     if @message.save
       redirect_to conversation_messages_path(@conversation)
