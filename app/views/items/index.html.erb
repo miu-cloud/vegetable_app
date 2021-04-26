@@ -53,7 +53,7 @@
       <!-- <td><th><%= link_to "ほしい", conversation_messages_path(conversation_id: Conversation.where(recipient_id: item.user_id).ids[0].to_i)%></th> -->
       
 　　　　 <th><%#= link_to "ほしい", conversation_messages_path(sender_id: current_user.id, recipient_id: item.user.id) %></th> 
-    <%= link_to "ほしい" %>
+    <th><%= link_to "ほしい"%></th>
     <% end %>
     </tr>
   </table> 
