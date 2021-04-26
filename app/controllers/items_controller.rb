@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), notice: '投稿しました！'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to items_path(@item)
+      redirect_to items_path(@item), notice: '更新しました！'
     else
       render :edit
     end
