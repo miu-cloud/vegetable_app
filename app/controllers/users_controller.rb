@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_q, only: [:mypage, :search]
   before_action :authenticate_user!
+  before_action :set_q, only: [:mypage, :search]
 
   def index
     @users = User.all
@@ -19,6 +19,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to mypage_path, alert: '不正なアクセスです！'
+    end
   end
 
   def update
