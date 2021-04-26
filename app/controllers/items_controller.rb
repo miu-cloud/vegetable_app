@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-　before_action :authenticate_user!
+  before_action :authenticate_user!
   def index
     @q = Item.ransack(params[:q])#.order(created_at: :desc)
     @items = @q.result
@@ -22,6 +22,9 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    if @item.user != current_user
+      redirect_to items_path, alert: '不正なアクセスです！'
+    end
   end
 
   def update
