@@ -16,8 +16,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    @item.save
-    redirect_to item_path(@item)
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -29,8 +32,11 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
-    redirect_to items_path(@item)
+    if @item.update(item_params)
+      redirect_to items_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy

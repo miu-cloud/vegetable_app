@@ -1,5 +1,16 @@
 <h1>新規投稿</h1>
 
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @item do |f| %>
 <table> 
   <tr>
@@ -24,7 +35,7 @@
   </tr>
   <tr>
     <th><%= f.label :受付状態 %></th>
-    <th><%= f.select :state, ["可","終了"], {include_blank: '選択して下さい'} %></th>
+    <th><%= f.select :state, ['男性','不可'], {include_blank: '選択して下さい'} %></th>
   </tr>
   <tr>
     <th><%= f.label :画像 %></th>
