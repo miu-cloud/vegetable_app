@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_q, only: [:mypage, :search]
+  before_action :authenticate_user!
 
   def index
     @users = User.all
