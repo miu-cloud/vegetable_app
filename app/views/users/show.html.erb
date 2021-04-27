@@ -12,6 +12,7 @@
     <%= link_to "編集", edit_user_path(@user) %>
   <% end %>
 </div>
+  <%= link_to "メッセージを開始する", users_path %>
 
 <h1>投稿リスト</h1>
 <% @user.items.each do |item| %>

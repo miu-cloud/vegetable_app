@@ -9,4 +9,5 @@ class User < ApplicationRecord
   mount_uploader :icon, ImageUploader
 
   has_many :items, dependent: :destroy
+  has_many :messages, dependent: :destroy
 end
