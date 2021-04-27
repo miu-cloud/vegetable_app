@@ -4,6 +4,7 @@ class ConversationsController < ApplicationController
   def index
     @conversations = Conversation.all
   end
+  
   def create
     # 自身で作ったログイン機能であれば、独自実装してあるはずの
     # logged_in?メソッドを使用して、ログイン時のみ会話を保存できるようにする

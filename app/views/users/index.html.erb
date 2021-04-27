@@ -1,14 +1,14 @@
 <h1>ユーザの一覧</h1>
-<% @users.each do |user| %>
-  <%#= user.name %>
-  <%#= link_to user.name, user_path(user) %>
-    <% if user.id != current_user.id %>
-    <li>
-      <div class="item">
-        <%= link_to user.name, user %>
-        <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
-      </div>
-    </li>
+  <% @users.each do |user| %>
+    <div class="item">
+      <% if user.id != current_user.id %>
+        <% if user.icon? %>
+          <%= image_tag user.icon.url, class: 'user-icon ', :size => '120x110' %>
+        <% else %>
+          <%= image_tag 'default.jpg', :class=>"user-icon", :alt => 'デフォルト画像', :size =>'120x110' %>
+        <% end %>
+            <%= link_to user.name, user %>
+            <%= link_to 'メッセージを送る', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
+      <% end %>
+    </div>
   <% end %>
-  </div>
-<% end %>
