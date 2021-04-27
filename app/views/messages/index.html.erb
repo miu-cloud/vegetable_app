@@ -1,7 +1,10 @@
-<%#= item.user.name %>　<!--誰と会話してるか表示-->
-<% if @over_ten %>
-  <%= link_to '以前のメッセージ', '?m=all' %>
-<% end %>
+<div class = "chat-room">
+  <% if current_user.id == @conversation.sender_id %>
+    <%= @conversation.recipient_id %>さんとのチャットルーム<!--誰と会話してるか表示-->
+  <% elsif current_user.id == @conversation.recipient_id %>
+    <%= @conversation.sender_id %>さんとのチャットルーム<!--誰と会話してるか表示-->
+  <% end %>
+</div>
 <div class="ui segment">
   <% @messages.each do |message| %>
     <% if message.body.present? %>
@@ -25,15 +28,16 @@
 <%= form_with(model: [@conversation, @message]) do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
-  </div>
     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div>
+  </div>
+  <div class="message-button">
     <%= f.submit "メッセージを送る" %>
   </div>
 <% end %>
-<!-- 終了ボタンを押したらステータスが終了に変更され、投稿一覧画面にほしいボタンが表示されなくなる -->
-<!-- itemに紐づくstate -->
-<!-- <%#= form_for @item do |f| %>
-  <%#= f.submit "終了" %>
-  <%#= f.select :state, [['可', '可'], ['終了', '終了']], {include_blank: '選択して下さい'} %>
-<%# end %> -->
+<div class="field">
+  <% if current_user.id == @conversation.sender_id %>
+    <h4>ゆずるユーザが決定したら</h4>
+    <th><%= link_to "受付状態を終了に変更するか投稿を削除してください", users_path %></th><!--  投稿したユーザの詳細に行きたい --> 
+  <% end %>
+</div>
+
