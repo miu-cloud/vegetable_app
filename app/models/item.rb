@@ -3,7 +3,7 @@ class Item < ApplicationRecord
  mount_uploader :image, ImageUploader
 
  with_options presence: true do
-     validates :title
+     validates :title, format: { with: /\A[ァ-ヶー－]+\z/, message: :katakana }
      validates :content
      validates :count
      validates :place

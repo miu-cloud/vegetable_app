@@ -35,7 +35,7 @@
   </tr>
   <tr>
     <th><%= f.label :受付状態 %></th>
-    <th><%= f.select :state, ['可','不可'], {include_blank: '選択して下さい'} %></th>
+    <th><%= f.select :state, [['可', '可'], ['終了', '終了']], {include_blank: '選択して下さい'} %></th>
   </tr>
   <tr>
     <th><%= f.label :画像 %></th>
