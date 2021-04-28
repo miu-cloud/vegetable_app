@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+      user: ユーザー
+    attributes:
+      item:
+        title: 野菜の名前
+        content: 内容
+        count: 数量
+        place: 譲渡場所
+        promise_at: 日時
+        state: 受付状態
+        image: 画像
+
+      user:
+        title: タイトル
+        username: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶

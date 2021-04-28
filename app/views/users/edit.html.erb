@@ -1,2 +1,31 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>ユーザの編集</h1>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for @user do |f|%>
+    <table> 
+      <tr>
+        <th><%= f.label :name %></th>
+        <th><%= f.text_field :name %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :email %></th>
+        <th><%= f.text_field :email %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :icon %></th>
+        <th><%= f.file_field :icon %></th>
+      </tr>
+    </table>
+    <div class = "button" >
+      <%= f.submit "編集" %>
+    </div>
+  <% end %>
+

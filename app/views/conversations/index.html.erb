@@ -1,0 +1,10 @@
+<table class= "message-index" >
+  <h1>メッセージ一覧</h1>
+    <% @conversations.each do |conversation| %>
+       <% if conversation.messages.present? %>
+        <% if conversation.target_user(current_user).present? %>
+          <tr><th><%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%></th></tr>
+        <% end %>
+       <% end %>
+    <% end %>
+</table>

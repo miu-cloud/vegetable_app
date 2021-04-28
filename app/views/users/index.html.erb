@@ -1,6 +1,14 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-<% @users.each do |user| %>
-  <%= user.name %>
-<% end %>
+<h1>ユーザの一覧</h1>
+  <% @users.each do |user| %>
+    <div class="user-index">
+      <% if user.id != current_user.id %>
+        <% if user.icon? %>
+          <%= image_tag user.icon.url, class: 'user-icon ', :size => '120x110' %>
+        <% else %>
+          <%= image_tag 'default.jpg', :class=>"user-icon", :alt => 'デフォルト画像', :size =>'120x110' %>
+        <% end %>
+            <%= link_to user.name, user %>さんに
+            <%= link_to 'メッセージを送る', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
+      <% end %>
+    </div>
+  <% end %>

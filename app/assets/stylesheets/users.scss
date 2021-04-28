@@ -1,3 +1,45 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.get_and_giveover {
+  display: inline-block;
+  padding: 5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #c58668;           
+  height: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 100px;
+  margin-right: 100px;
+  margin-left: 300px;
+}
+
+.get_and_giveover:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.user-icon { 
+    border-radius: 50%;
+    margin-right: 50px;
+ }
+
+.profile {
+    text-align: center;
+    padding-right: 100px;
+}
+.user-index {
+  text-align: center;
+  box-shadow: 0 0 8px gray;
+  background-color: whitesmoke;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+  border-radius:30px;
+}

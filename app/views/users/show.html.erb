@@ -1,2 +1,58 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>ユーザの詳細</h1>
+<div class = "profile">
+  <% if @user.icon? %>
+    <%= image_tag @user.icon.url, class: 'user-icon ', :size => '120x110' %>
+  <% else %>
+    <%= image_tag 'default.jpg', :class=>"cat-icon", :alt => 'デフォルト画像', :size =>'120x110' %>
+  <% end %>
+    <%= @user.name %>
+  <% if @user.id == current_user.id %>
+  <br>
+    <%= @user.email %>
+    <%= link_to "編集", edit_user_path(@user) %>
+  <% end %>
+</div>
+<% unless current_user.id == @user.id %>
+  <%= link_to "メッセージを開始する", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post %>
+<% end %>
+<h1>投稿リスト</h1>
+<% @user.items.each do |item| %>
+  <div class = "box"><span class="box-tape"><%= item.title %></span>
+  <table> 
+    <tr>
+      <th>野菜の名前</th>
+      <th><%= item.title %></th>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <th><%= item.content %></th>
+    </tr>
+    <tr>  
+      <th>数量</th>
+      <th><%= item.count %></th>
+    </tr>
+    <tr>
+      <th>譲渡場所</th>
+      <th><%= item.place %></th>
+    </tr>
+    <tr>
+      <th>日時</th>
+      <th><%= item.promise_at.strftime("%Y-%m-%d %H:%M") %></th>
+    </tr>
+    <tr>
+      <th>受付状態</th>
+      <th><%= item.state %></th>
+    </tr>
+    <tr>
+      <th>画像</th>
+      <th><%= image_tag item.image.url, class: 'item-icon '%></th>
+    </tr>
+    <% if current_user.id == item.user_id %>
+      <th><%= link_to "編集", edit_item_path(item) %></th>
+      <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+    <% end %>
+    </table> 
+    </div>
+<% end %>
+
+  <%= link_to "戻る", mypage_path %>

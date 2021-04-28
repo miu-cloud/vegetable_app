@@ -1,0 +1,43 @@
+<div class = "chat-room">
+  <% if current_user.id == @conversation.sender_id %>
+    <%= @conversation.recipient.name %>さんとのチャットルーム<!--誰と会話してるか表示-->
+  <% elsif current_user.id == @conversation.recipient_id %>
+    <%= @conversation.sender.name %>さんとのチャットルーム<!--誰と会話してるか表示-->
+  <% end %>
+</div>
+<div class="ui segment">
+  <% @messages.each do |message| %>
+    <% if message.body.present? %>
+      <div class="item">
+        <div class="content">
+          <div class="header"><strong><%= message.user.name %></strong> <%= message.message_time %></div>
+          <div class="list">
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <%= message.body %> /
+              <% if message.user == current_user %>
+                <%= message.read ? '既読' : '未読' %>
+              <% end %>  
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%= form_with(model: [@conversation, @message]) do |f| %>
+  <div class="message-field">
+    <%= f.text_area :body, class: "form-control" %>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+  </div>
+  <div class="message-button">
+    <%= f.submit "メッセージを送る" %>
+  </div>
+<% end %>
+<div class="message-field">
+  <% if current_user.id == @conversation.recipient_id %>
+    <h4>ゆずるユーザが決定したら</h4>
+    <th><%= link_to "受付状態を終了に変更するか投稿を削除してください", users_path %></th><!--  投稿したユーザの詳細に行きたい --> 
+  <% end %>
+</div>
+

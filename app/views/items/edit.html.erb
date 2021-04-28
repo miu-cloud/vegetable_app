@@ -1,0 +1,48 @@
+<h1>投稿編集画面</h1>
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @item do |f| %>
+<table> 
+  <tr>
+    ※野菜の名前はカタカナで入力してください
+    <th><%= f.label :野菜の名前 %></th>
+    <th><%= f.text_field :title %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :内容 %></th>
+    <th><%= f.text_area :content %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :数量 %></th>
+    <th><%= f.number_field :count, min:0, max:100 %></th>
+  </tr>
+　<tr>
+    <th><%= f.label :譲渡場所 %></th>
+    <th><%= f.text_field :place %></th>
+　</tr>
+  <tr>
+    <th><%= f.label :日時 %></th>
+    <th><%= f.datetime_field :promise_at %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :受付状態 %></th>
+    <th><%= f.select :state, [['可', '可'], ['終了', '終了']], {include_blank: '選択して下さい'} %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :画像 %></th>
+    <th><%= f.file_field :image %></th>
+  </tr>
+</table> 
+<div class = "button" >
+  <%= f.submit "変更" %>
+</div>
+<% end %>

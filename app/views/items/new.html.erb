@@ -1,0 +1,49 @@
+<h1>新規投稿</h1>
+
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @item do |f| %>
+<table> 
+  <tr>
+    <th><%= f.label :野菜の名前 %></th>
+    <th><%= f.text_field :title,:placeholder => "カタカナ（全角）で入力して下さい" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :内容 %></th>
+    <th><%= f.text_area :content,:placeholder => "例）規格外品です。○月○日に収穫しました。　など"  %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :数量 %></th>
+    <th><%= f.number_field :count, min:1, max:100, :placeholder => "1~100" %></th>
+  </tr>
+　<tr>
+    <th><%= f.label :譲渡場所 %></th>
+    <th><%= f.text_field :place, :placeholder => "住所は入力しないで下さい" %></th>
+　</tr>
+  <tr>
+    <th><%= f.label :日時 %></th>
+    <th><%= f.datetime_field :promise_at %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :受付状態 %></th>
+    <th><%= f.select :state, [['可', '可'], ['終了', '終了']], {include_blank: '選択して下さい'} %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :画像 %></th>
+    <th><%= f.file_field :image %></th>
+  </tr>
+</table> 
+<div class = "button" >
+  <%= f.submit "投稿" %>
+</div>
+
+<% end %>

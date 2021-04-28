@@ -1,0 +1,64 @@
+<h1>投稿一覧画面</h1>
+<h1>やさい検索</h1>
+<div class = "search-form" >
+  <%= search_form_for @q, url: items_path do |f| %>
+    <%= f.label :title_cont, 'やさい検索' %>
+    <%= f.search_field :title_cont, :placeholder => "カタカナ(全角)で検索して下さい" %>
+    <%= f.submit '検索' %>
+    <%= link_to "リセット", items_path %>
+  <% end %>
+</div>
+
+<% @items.each do |item| %>
+  <div class = "box"><span class="box-tape"><%= item.title %></span>
+  <table>
+  <% if item.state == '可'%>
+    <tr>
+      <th>ユーザ名</th>
+      <th><%= link_to item.user.name, user_path(item.user) %></th>
+    </tr>
+  <% end %>
+    <tr>
+      <th>野菜の名前</th>
+      <th><%= item.title %></th>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <th><%= item.content %></th>
+    </tr>
+    <tr>  
+      <th>数量</th>
+      <th><%= item.count %></th>
+    </tr>
+    <tr>
+      <th>譲渡場所</th>
+      <th><%= item.place %></th>
+    </tr>
+    <tr>
+      <th>日時</th>
+      <th><%= item.promise_at.strftime("%Y-%m-%d %H:%M") %></th>
+    </tr>
+    <tr>
+      <th>受付状態</th>
+      <th><%= item.state %></th>
+    </tr>
+    <tr>
+      <th>画像</th>
+      <th><%= image_tag item.image.url, class: 'item-icon '%></th>
+    </tr>
+    <tr>
+    <% if current_user.id == item.user_id %>
+      <th><%= link_to "編集", edit_item_path(item) %></th>
+      <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+    <% elsif item.state == '可'%>
+      <th><%= link_to "このユーザにメッセージを送る",user_path(item.user) %></th>
+    <% end %>
+    </tr>
+  </table> 
+  </div> 
+<% end %>
+
+
+
+
+

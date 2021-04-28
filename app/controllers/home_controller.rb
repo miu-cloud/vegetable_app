@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def index
+  skip_before_action :authenticate_user!
+  def top
   end
 end
