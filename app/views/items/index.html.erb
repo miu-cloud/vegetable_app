@@ -12,11 +12,12 @@
 <% @items.each do |item| %>
   <div class = "box"><span class="box-tape"><%= item.title %></span>
   <table>
+  <% if item.state == '可'%>
     <tr>
       <th>ユーザ名</th>
       <th><%= link_to item.user.name, user_path(item.user) %></th>
-      
     </tr>
+  <% end %>
     <tr>
       <th>野菜の名前</th>
       <th><%= item.title %></th>
@@ -50,10 +51,7 @@
       <th><%= link_to "編集", edit_item_path(item) %></th>
       <td><%= link_to '削除', item, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
     <% elsif item.state == '可'%>
-      <!-- <td><th><%= link_to "ほしい", conversation_messages_path(conversation_id: Conversation.where(recipient_id: item.user_id).ids[0].to_i)%></th> -->
-      
-　　　　 <th><%#= link_to "ほしい", conversation_messages_path(sender_id: current_user.id, recipient_id: item.user.id) %></th> 
-    <th><%= link_to "このユーザにメッセージを送る",user_path(item.user) %></th>
+      <th><%= link_to "このユーザにメッセージを送る",user_path(item.user) %></th>
     <% end %>
     </tr>
   </table> 

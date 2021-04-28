@@ -1,8 +1,8 @@
 <div class = "chat-room">
   <% if current_user.id == @conversation.sender_id %>
-    <%= @conversation.recipient_id %>さんとのチャットルーム<!--誰と会話してるか表示-->
+    <%= @conversation.recipient.name %>さんとのチャットルーム<!--誰と会話してるか表示-->
   <% elsif current_user.id == @conversation.recipient_id %>
-    <%= @conversation.sender_id %>さんとのチャットルーム<!--誰と会話してるか表示-->
+    <%= @conversation.sender.name %>さんとのチャットルーム<!--誰と会話してるか表示-->
   <% end %>
 </div>
 <div class="ui segment">
