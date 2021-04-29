@@ -16,6 +16,6 @@ validate :date_before_start
 
   def date_before_start
     return if promise_at.blank?
-    errors.add(:promise_at, "は現在の時刻以降のものを選択してください") if promise_at < DateTime.today
+    errors.add(:promise_at, "は今日以降のものを選択してください") if promise_at < Date.today 
   end 
 end
