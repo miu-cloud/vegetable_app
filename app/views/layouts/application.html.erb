@@ -12,9 +12,7 @@
 
   <body>
     <header>
-      <%= link_to root_path do %>
         <h1 class="vegitabel" style="font-family: fantasy;">Vegetabel</h1>
-      <% end %>
 
       <% if user_signed_in? %> 
         <%= link_to "マイページ", mypage_path %>

@@ -1,6 +1,11 @@
-<h1>Home#TOP</h1>
-<h1>トップページをここに表示</h1>
-<h1>アプリの説明などを記入</h1>
+<div class = "top">
+  <h2>このアプリケーションは野菜のロス削減を目指します。
+    <br>欲しいユーザと譲りたいユーザ同士でメッセージのやりとりを行うことができます
+    <br>約束を取り付けたら実際に貰ったり譲ったりしましょう</h2>
+</div>
+
+    <%= link_to "ログイン", new_user_session_path, {class: "top-login"} %>
+    <%= link_to "新規登録", new_user_registration_path, {class: "top-login"} %>
 
 
 

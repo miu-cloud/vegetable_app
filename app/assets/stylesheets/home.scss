@@ -1,3 +1,32 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.top-login {
+    display: inline-block;
+    text-decoration: none;
+    background: #ffba78;
+    color: #ffba78;
+    width: 120px;
+    height: 120px;
+    font-size: 21px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #d29963;
+    text-shadow: -1px -1px rgba(255, 255, 255, 0.43), 1px 1px rgba(0, 0, 0, 0.49);
+    transition: .4s;
+    margin-top: 200px;
+    margin-left: 400px;
+  }
+  .top-login:active {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+    border-bottom: none;
+  }
+  .top {
+      text-align: center;
+  }
