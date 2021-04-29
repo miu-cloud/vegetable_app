@@ -34,10 +34,5 @@
     <%= f.submit "メッセージを送る" %>
   </div>
 <% end %>
-<div class="message-field">
-  <% if current_user.id == @conversation.recipient_id %>
-    <h4>ゆずるユーザが決定したら</h4>
-    <th><%= link_to "受付状態を終了に変更するか投稿を削除してください", users_path %></th><!--  投稿したユーザの詳細に行きたい --> 
-  <% end %>
-</div>
+
 
