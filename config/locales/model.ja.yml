@@ -9,7 +9,7 @@ ja:
         content: 内容
         count: 数量
         place: 譲渡場所
-        promise_at: 日時
+        promise_at: 譲渡希望日時
         state: 受付状態
         image: 画像
 
