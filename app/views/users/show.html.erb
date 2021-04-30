@@ -12,9 +12,11 @@
     <%= link_to "編集", edit_user_path(@user) %>
   <% end %>
 </div>
-<% unless current_user.id == @user.id %>
-  <%= link_to "メッセージを開始する", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post %>
+<div class = "user-show">
+  <% unless current_user.id == @user.id %>
+    <%= link_to "メッセージを開始する", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post %>
 <% end %>
+</div>
 <h1>投稿リスト</h1>
 <% @user.items.each do |item| %>
   <div class = "box"><span class="box-tape"><%= item.title %></span>

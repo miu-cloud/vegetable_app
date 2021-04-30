@@ -8,9 +8,7 @@
     <%= link_to @user.name, user_path(@user) %>
   </div>
 <br>
-  <div class = "get_and_giveover" >
-    <%= link_to "もらう", items_path %>
-  </div>
-  <div class = "get_and_giveover" >
-    <%= link_to "ゆずる", new_item_path %>
-  </div>
+
+    <%= link_to "もらう", items_path, {class: "get_and_giveover"} %>
+    <%= link_to "ゆずる", new_item_path, {class: "get_and_giveover"} %>
+

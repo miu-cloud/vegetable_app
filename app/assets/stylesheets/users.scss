@@ -3,25 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .get_and_giveover {
   display: inline-block;
-  padding: 5em 1em;
   text-decoration: none;
-  border-radius: 4px;
-  color: #ffffff;
-  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  background: #ffba78;
+  color: #ffba78;
+  width: 120px;
+  height: 120px;
+  font-size: 21px;
+  line-height: 120px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  border-bottom: solid 3px #c58668;           
-  height: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-top: 100px;
-  margin-right: 100px;
-  margin-left: 300px;
+  border-bottom: solid 3px #d29963;
+  text-shadow: -1px -1px rgba(255, 255, 255, 0.43), 1px 1px rgba(0, 0, 0, 0.49);
+  transition: .4s;
+  margin-top: 200px;
+  margin-left: 400px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .get_and_giveover:active {
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
   border-bottom: none;
 }
 
@@ -42,4 +48,10 @@
   margin-right: 100px;
   margin-bottom: 20px;
   border-radius:30px;
+}
+
+.user-show {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
