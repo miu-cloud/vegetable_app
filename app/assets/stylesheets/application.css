@@ -27,6 +27,35 @@ a {
 }
 a:hover {
     color: #FFCC00;
-    font-size: 1.2em;/*文字サイズ2倍*/
     font-weight: bold;
+}
+
+.guest-login{
+    text-align: center;
+    display: inline-block;
+	position: relative;
+	width: 200px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #1B1B1B;
+	background: #fff;
+	border-radius: 30px;
+	border:1px solid #1B1B1B;
+	transition: transform ease .3s;
+}
+
+.guest-login:hover {
+	 cursor: pointer;
+	 text-decoration: none;
+}
+.guest-login span {
+	display: inline-block;
+	text-decoration: none;	
+	transition: transform ease .3s;
+}
+.guest-login:hover span{
+	cursor: pointer;
+	text-decoration: none;
+	transform: translateX(6px);
 }
