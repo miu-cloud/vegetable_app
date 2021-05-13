@@ -25,7 +25,9 @@
       </tr>
     </table>
     <div class = "button" >
-      <%= f.submit "編集" %>
+    <% unless @user.email == 'guest@example.com' %>
+        <%= f.submit "編集" %>
+    <% end %>
     </div>
   <% end %>
 

@@ -8,8 +8,9 @@
     <%= @user.name %>
   <% if @user.id == current_user.id %>
   <br>
-    <%= @user.email %>
-    <%= link_to "編集", edit_user_path(@user) %>
+    <% unless @user.email == 'guest@example.com' %>
+      <%= link_to "編集", edit_user_path(@user) %>
+    <% end %>
   <% end %>
 </div>
 <div class = "user-show">
