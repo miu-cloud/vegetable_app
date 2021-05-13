@@ -59,10 +59,12 @@ https://docs.google.com/spreadsheets/d/1wQHKd8Y2dzHQnqw1K1AYLOoGqTe4-fW-B4Qtnt0T
 https://docs.google.com/spreadsheets/d/1fAYPzRMaullK9sRpqk1mtxZaQkcsWsx5oDLfe06baEA/edit?usp=sharing
 ## ER図
 https://docs.google.com/spreadsheets/d/1TGA4cwX0r6gZZpbRg6m0tJ_ZKtAjJ3bQC7LAksg8MTs/edit?usp=sharing
-## 使用予定Gem
-- ransack
-- devise
-- letter_opener
-## その他
-### 就業Tarmからはdevise、メッセージ機能を実装をする
-### カリキュラム外からはransackを用いて検索機能を実装をする
+## 使用Gem
+### devise
+### carrierwave
+### ransack
+### mimemagic
+### rspec-rails
+### factory_bot_rails
+### spring-commands-rspec
+### pry-rails
