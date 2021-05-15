@@ -19,7 +19,9 @@
 <% end %>
 </div>
 <h1>投稿リスト</h1>
-<% @user.items.each do |item| %>
+<% if @user.items.count == 0 %>
+ <h3>投稿はありません</h3>
+<% elsif @user.items.each do |item| %>
   <div class = "box"><span class="box-tape"><%= item.title %></span>
   <table> 
     <tr>
@@ -56,6 +58,7 @@
     <% end %>
     </table> 
     </div>
+<% end %>
 <% end %>
 
   <%= link_to "戻る", mypage_path %>
